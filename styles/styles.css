@@ -17,7 +17,7 @@ body {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  transition: font-size 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
 }
 /* Aside */
 .timeline {
@@ -146,7 +146,7 @@ section[data-title="skills"] {
 .row {
   /* display: flex; */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(23.5rem, 1fr));
   /* position: absolute; */
   left: 10%;
   top: 10%;
@@ -156,18 +156,19 @@ section[data-title="skills"] {
 }
 .skills__card::before {
   position: absolute;
+  transform-origin: center;
   content: "";
-  width: 20em;
+  width: 25em;
   transform-origin: center;
   background-color: rgba(255, 255, 255, 0.356);
   height: 7rem;
   rotate: z 33deg;
   left: -80%;
-  bottom: -70%;
+  bottom: -80%;
   transition: 700ms ease-in transform;
 }
 .skills__card:hover::before {
-  transform: translate(0, -700%);
+  transform: translate(0, -450px);
 }
 
 /* Projects */
@@ -224,7 +225,6 @@ section[data-title="skills"] {
 }
 .projects__content > h2 {
   margin-bottom: 1rem;
-  word-break: break-all;
 }
 .projects__content > span {
   font-size: 0.8em;
@@ -305,20 +305,16 @@ section[data-title="skills"] {
   .rows {
     grid-template-columns: repeat(2, 1fr);
   }
+  section[data-title="intro"] {
+    font-size: 5rem;
+  }
   .projects__item {
     flex-direction: column;
   }
   html {
-    font-size: 45%;
+    font-size: 55%;
   }
   .timeline {
     left: -200px;
   }
-}
-@media screen and (max-width: 500px) {
-  html {
-    font-size: 35%;
-  }
-}
-@media screen and (max-width: 400px) {
 }
