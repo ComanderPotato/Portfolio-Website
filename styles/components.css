@@ -1,0 +1,39 @@
+/* Project Chips */
+.chip {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  /* font-weight: bold; */
+  font-size: 1.5rem;
+  transition: scale 200ms ease-in-out;
+  cursor: pointer;
+  color: #323330;
+  color: #1e1e1e;
+  font-weight: bold;
+}
+.chip:hover {
+  scale: 1.05;
+}
+.chip--js {
+  background-color: #f0db4f;
+}
+.chip--html {
+  background-color: #f06529;
+}
+.chip--css {
+  background-color: #264de4;
+  color: rgb(245, 219, 219);
+}
+
+.chip--react {
+  background-color: #61dbfb;
+}
+.chip--ts {
+  background-color: #007acc;
+}
+.chip--firebase {
+  background-color: #f5820d;
+}
+.chip--java {
+  background-color: #f89820;
+}
