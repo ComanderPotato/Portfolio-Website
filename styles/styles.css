@@ -155,7 +155,7 @@ section[data-title="skills"] {
 .skills__card::before {
   position: absolute;
   content: "";
-  width: 30rem;
+  width: 20em;
   transform-origin: center;
   background-color: rgba(255, 255, 255, 0.356);
   height: 7rem;
