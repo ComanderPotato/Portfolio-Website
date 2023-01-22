@@ -17,6 +17,7 @@ body {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+  transition: font-size 400ms ease-in-out;
 }
 /* Aside */
 .timeline {
@@ -26,6 +27,7 @@ html {
   top: 50%;
   transform: translateY(-50%);
   height: 500px;
+  transition: left 400ms ease-in-out;
 }
 
 .timeline__bar {
@@ -281,4 +283,42 @@ section[data-title="skills"] {
 }
 .projects__links .projects__links-demo:hover svg {
   stroke: var(--primary);
+}
+
+@media screen and (max-width: 1850px) {
+  section {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 1150px) {
+  html {
+    font-size: 50%;
+  }
+  section {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 800px) {
+  section {
+    width: 90%;
+  }
+  .rows {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects__item {
+    flex-direction: column;
+  }
+  html {
+    font-size: 45%;
+  }
+  .timeline {
+    left: -200px;
+  }
+}
+@media screen and (max-width: 500px) {
+  html {
+    font-size: 35%;
+  }
+}
+@media screen and (max-width: 400px) {
 }
