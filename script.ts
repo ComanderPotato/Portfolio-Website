@@ -31,7 +31,6 @@ const sectionObserver = new IntersectionObserver(
       liEl.forEach((li) => {
         if (li.dataset.title === entryTarget.dataset.title) {
           if (li.classList.contains("nav__desktop-item")) {
-            console.log("Hello");
             li.classList.toggle("nav__desktop--active", entry.isIntersecting);
           } else {
             li.classList.toggle("nav__mobile--active", entry.isIntersecting);
@@ -42,11 +41,11 @@ const sectionObserver = new IntersectionObserver(
   },
   {
     threshold:
-      window.screen.availWidth >= 1200
+      window.innerWidth >= 1200
         ? 0.7
-        : window.screen.availWidth >= 800
+        : window.innerWidth >= 800
         ? 0.5
-        : window.screen.availWidth >= 600
+        : window.innerWidth >= 600
         ? 0.35
         : 0.3,
   }
