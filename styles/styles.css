@@ -26,7 +26,7 @@ html {
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
-  height: 500px;
+  height: 50%;
   transition: left 400ms ease-in-out;
 }
 
@@ -309,7 +309,7 @@ section[data-title="skills"] {
     width: 90%;
   }
   .row {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   }
   section[data-title="intro"] {
     font-size: 5rem;
@@ -326,6 +326,11 @@ section[data-title="skills"] {
 }
 @media screen and (max-width: 450px) {
   html {
-    font-size: 40%;
+    font-size: 35%;
+  }
+}
+@media screen and (max-width: 350px) {
+  html {
+    font-size: 30%;
   }
 }

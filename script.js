@@ -25,7 +25,7 @@ const sectionObserver = new IntersectionObserver((entries) => {
             }
         });
     });
-}, { threshold: window.screen.availWidth >= 1200 ? 0.6 : 0.3 });
+}, { threshold: window.screen.availWidth >= 1200 ? 0.6 : 0.1 });
 const images = document.querySelectorAll(".projects__image");
 const lazyLoader = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {

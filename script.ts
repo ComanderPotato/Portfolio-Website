@@ -36,7 +36,7 @@ const sectionObserver = new IntersectionObserver(
       });
     });
   },
-  { threshold: window.screen.availWidth >= 1200 ? 0.6 : 0.3 }
+  { threshold: window.screen.availWidth >= 1200 ? 0.6 : 0.1 }
 );
 const images = document.querySelectorAll(
   ".projects__image"
