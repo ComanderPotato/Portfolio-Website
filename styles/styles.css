@@ -18,6 +18,7 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
   transition: all 400ms ease-in-out;
+  scroll-snap-align: center;
 }
 /* Aside */
 .timeline {
@@ -367,10 +368,16 @@ section[data-title="skills"] {
   html {
     font-size: 35%;
   }
+  .row {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media screen and (max-width: 350px) {
   html {
     font-size: 30%;
+  }
+  .row {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 

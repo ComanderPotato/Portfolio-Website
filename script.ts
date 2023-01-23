@@ -23,6 +23,7 @@ const sectionObserver = new IntersectionObserver(
     const liEl = document.querySelectorAll("li");
     entries.forEach((entry) => {
       let entryTarget = entry.target as HTMLDivElement;
+      console.log(entry.intersectionRatio, entry.target);
       if (entryTarget.dataset.title === "skills" && entry.isIntersecting) {
         skillsCards.forEach((card) => {
           card.classList.add("skills__card-active");
@@ -41,13 +42,7 @@ const sectionObserver = new IntersectionObserver(
   },
   {
     threshold:
-      window.innerWidth >= 1200
-        ? 0.7
-        : window.innerWidth >= 800
-        ? 0.5
-        : window.innerWidth >= 600
-        ? 0.35
-        : 0.3,
+      window.innerWidth >= 1200 ? 0.5 : window.innerWidth >= 800 ? 0.4 : 0.2,
   }
 );
 const lazyLoader = new IntersectionObserver(
@@ -91,6 +86,7 @@ window.addEventListener("resize", () => {
   const listItems = document.querySelectorAll(
     ".timeline__list-item"
   ) as NodeListOf<HTMLLIElement>;
+  console.log(window.innerWidth);
   sectionArr.forEach((section) => {
     listItems.forEach((li) => {
       if (section.dataset.title === li.dataset.title) {
