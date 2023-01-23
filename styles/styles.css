@@ -103,6 +103,7 @@ a {
 }
 body {
   font-family: sans-serif;
+  background-color: var(--primary-high-contrast);
 }
 .nav__desktop--active {
   font-weight: bold;
