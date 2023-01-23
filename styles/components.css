@@ -37,3 +37,8 @@
 .chip--java {
   background-color: #f89820;
 }
+
+.chip--figma {
+  background-color: #ae4dff;
+  color: rgb(245, 219, 219);
+}
