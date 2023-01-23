@@ -50,10 +50,14 @@ html {
 }
 li {
   list-style-type: none;
+
   color: rgba(245, 219, 219, 0.678);
   transition: all 200ms ease-in-out;
   font-size: 1.4rem;
   align-items: flex-end;
+}
+.timeline ul li:nth-child(4) {
+  height: 0 !important;
 }
 
 a {
@@ -84,6 +88,8 @@ section {
   display: grid;
   max-width: 160rem;
   place-content: center;
+
+  padding-block: 5rem;
 }
 
 section > h2 {
@@ -240,7 +246,7 @@ section[data-title="skills"] {
   font-size: 1em;
 }
 .projects__content > p {
-  font-size: 0.8em;
+  font-size: 0.9em;
   line-height: 1.5;
   overflow-y: scroll;
   max-height: 15rem;
@@ -302,7 +308,7 @@ section[data-title="skills"] {
   section {
     width: 90%;
   }
-  .rows {
+  .row {
     grid-template-columns: repeat(2, 1fr);
   }
   section[data-title="intro"] {
@@ -316,5 +322,10 @@ section[data-title="skills"] {
   }
   .timeline {
     left: -200px;
+  }
+}
+@media screen and (max-width: 400px) {
+  html {
+    font-size: 40%;
   }
 }
