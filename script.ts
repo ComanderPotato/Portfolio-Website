@@ -36,9 +36,8 @@ const sectionObserver = new IntersectionObserver(
       });
     });
   },
-  { threshold: 0.5 }
+  { threshold: window.screen.availWidth >= 1200 ? 0.6 : 0.3 }
 );
-
 const images = document.querySelectorAll(
   ".projects__image"
 ) as NodeListOf<HTMLDivElement>;
@@ -73,8 +72,11 @@ sectionArr.forEach((el) => {
 const ul = document.createElement("ul");
 headersEl.insertAdjacentElement("afterbegin", ul);
 sectionArr.forEach((el) => {
+  console.log(getPadding(el));
   let markup = `
-  <li data-title=${el.dataset.title}>
+  <li data-title=${
+    el.dataset.title
+  } class="timeline__list-item"style='height: ${getPadding(el)}%'>
     <a href="#${el.id}">${el.children[0].textContent}</a>
   </li>
   `;
@@ -87,4 +89,25 @@ function fillTimeLine(): void {
     (document.documentElement.scrollHeight -
       document.documentElement.clientHeight);
   timelineEl.style.height = `${100 * scrollPercentage}%`;
+}
+window.addEventListener("resize", () => {
+  console.log(window);
+
+  const listItems = document.querySelectorAll(
+    ".timeline__list-item"
+  ) as NodeListOf<HTMLLIElement>;
+  sectionArr.forEach((section) => {
+    listItems.forEach((li) => {
+      if (section.dataset.title === li.dataset.title) {
+        li.style.height = `${getPadding(section)}%`;
+      }
+    });
+  });
+});
+function getPadding(section: HTMLElement) {
+  return (
+    (section.getBoundingClientRect().height /
+      document.documentElement.scrollHeight) *
+    100
+  );
 }
