@@ -101,7 +101,7 @@ section[data-title="intro"] {
 }
 [data-title="intro"] > span {
   color: var(--text-secondary);
-  font-size: 0.4em;
+  font-size: 0.39em;
   margin-top: -0.8em;
   padding-left: 0.8em;
   letter-spacing: 0.5em;
@@ -332,5 +332,62 @@ section[data-title="skills"] {
 @media screen and (max-width: 350px) {
   html {
     font-size: 30%;
+  }
+}
+
+.test {
+  /* overflow: hidden; */
+  display: flex;
+  height: 1em;
+  gap: 1rem;
+}
+
+.test span {
+  display: block;
+  /* height: 100%; */
+}
+.test > div {
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.test > div:nth-child(1) > span {
+  animation: firstWord 7000ms ease-in-out infinite 3000ms;
+}
+.test > div:nth-child(2) > span {
+  animation: secondWord 7000ms ease-in-out infinite 3000ms;
+}
+@keyframes firstWord {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  75% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
+}
+@keyframes secondWord {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-100%);
+  }
+  50% {
+    transform: translateY(-100%);
+  }
+  75% {
+    transform: translateY(-200%);
+  }
+  100% {
+    transform: translateY(-200%);
   }
 }
