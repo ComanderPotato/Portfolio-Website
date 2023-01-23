@@ -1,6 +1,5 @@
-const headersEl = document.querySelector(
-  ".timeline__headers"
-) as HTMLDivElement;
+const navDesktop = document.querySelector(".nav__desktop") as HTMLDivElement;
+const navMobile = document.querySelector(".nav__mobile") as HTMLDivElement;
 const sectionArr = document.querySelectorAll(
   "section"
 ) as NodeListOf<HTMLElement>;
@@ -31,23 +30,34 @@ const sectionObserver = new IntersectionObserver(
       }
       liEl.forEach((li) => {
         if (li.dataset.title === entryTarget.dataset.title) {
-          li.classList.toggle("active", entry.isIntersecting);
+          if (li.classList.contains("nav__desktop-item")) {
+            console.log("Hello");
+            li.classList.toggle("nav__desktop--active", entry.isIntersecting);
+          } else {
+            li.classList.toggle("nav__mobile--active", entry.isIntersecting);
+          }
         }
       });
     });
   },
-  { threshold: window.screen.availWidth >= 1200 ? 0.6 : 0.1 }
+  {
+    threshold:
+      window.screen.availWidth >= 1200
+        ? 0.7
+        : window.screen.availWidth >= 800
+        ? 0.5
+        : window.screen.availWidth >= 600
+        ? 0.35
+        : 0.3,
+  }
 );
-const images = document.querySelectorAll(
-  ".projects__image"
-) as NodeListOf<HTMLDivElement>;
-
 const lazyLoader = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       let entryTarget = entry.target as HTMLDivElement;
       if (entry.isIntersecting) {
         entryTarget.style.backgroundImage = `url(${entryTarget.dataset.src})`;
+        lazyLoader.unobserve(entryTarget);
       }
     });
   },
@@ -55,8 +65,10 @@ const lazyLoader = new IntersectionObserver(
     rootMargin: "500px",
   }
 );
+(
+  document.querySelectorAll(".projects__image") as NodeListOf<HTMLDivElement>
+).forEach((image) => lazyLoader.observe(image));
 
-images.forEach((image) => lazyLoader.observe(image));
 function getElementRatio(element: HTMLElement): number {
   return (
     element.getBoundingClientRect().height /
@@ -69,20 +81,6 @@ sectionArr.forEach((el) => {
   sectionObserver.observe(el);
 });
 
-const ul = document.createElement("ul");
-headersEl.insertAdjacentElement("afterbegin", ul);
-sectionArr.forEach((el) => {
-  console.log(getPadding(el));
-  let markup = `
-  <li data-title=${
-    el.dataset.title
-  } class="timeline__list-item"style='height: ${getPadding(el)}%'>
-    <a href="#${el.id}">${el.children[0].textContent}</a>
-  </li>
-  `;
-  ul.insertAdjacentHTML("beforeend", markup);
-});
-
 function fillTimeLine(): void {
   let scrollPercentage =
     (document.documentElement.scrollTop + document.body.scrollTop) /
@@ -91,23 +89,48 @@ function fillTimeLine(): void {
   timelineEl.style.height = `${100 * scrollPercentage}%`;
 }
 window.addEventListener("resize", () => {
-  console.log(window);
-
   const listItems = document.querySelectorAll(
     ".timeline__list-item"
   ) as NodeListOf<HTMLLIElement>;
   sectionArr.forEach((section) => {
     listItems.forEach((li) => {
       if (section.dataset.title === li.dataset.title) {
-        li.style.height = `${getPadding(section)}%`;
+        li.style.height = `${getHeightPercentage(section)}%`;
       }
     });
   });
 });
-function getPadding(section: HTMLElement) {
+function getHeightPercentage(section: HTMLElement) {
   return (
     (section.getBoundingClientRect().height /
       document.documentElement.scrollHeight) *
     100
   );
 }
+
+// Nav builder desktop / mobile
+(function () {
+  const ulMobile = document.createElement("ul");
+  const ulDesktop = document.createElement("ul");
+  navDesktop.insertAdjacentElement("afterbegin", ulDesktop);
+  navMobile.insertAdjacentElement("afterbegin", ulMobile);
+  sectionArr.forEach((element) => {
+    let mobileMarkup = createNav(element, false);
+    let desktopMarkup = createNav(element, true);
+    ulMobile.insertAdjacentHTML("beforeend", mobileMarkup);
+    ulDesktop.insertAdjacentHTML("beforeend", desktopMarkup);
+  });
+  function createNav(element: HTMLElement, isDesktop: boolean): string {
+    return `
+    <li data-title=${element.dataset.title} class="${
+      isDesktop ? "nav__desktop-item" : "nav__mobile-item"
+    }" style='height: ${
+      isDesktop ? `${getHeightPercentage(element)}%` : `auto`
+    }'>
+      <a href="#${element.id}">${element.children[0].textContent}</a>
+    </li>
+    `;
+  }
+})();
+let isDesktop = true;
+`${isDesktop ? "nav__desktop-item" : "nav__mobile-item"}`;

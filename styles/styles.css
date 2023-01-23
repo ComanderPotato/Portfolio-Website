@@ -22,12 +22,13 @@ html {
 /* Aside */
 .timeline {
   position: fixed;
-  z-index: 1000;
+  z-index: 2;
   left: 10px;
   top: 50%;
   transform: translateY(-50%);
   height: 50%;
   transition: left 400ms ease-in-out;
+  background-color: var(--primary-md-contrast);
 }
 
 .timeline__bar {
@@ -39,7 +40,11 @@ html {
   max-height: 100%;
   /* transition: height 1s ease; */
 }
-.timeline ul {
+
+/* Navigation */
+
+/* Navigation Desktop */
+.nav__desktop ul {
   position: absolute;
   height: 100%;
   display: flex;
@@ -48,15 +53,15 @@ html {
   width: max-content;
   padding-left: 2rem;
 }
-li {
+.nav__desktop-item,
+.nav__mobile-item {
   list-style-type: none;
-
   color: rgba(245, 219, 219, 0.678);
   transition: all 200ms ease-in-out;
   font-size: 1.4rem;
   align-items: flex-end;
 }
-.timeline ul li:nth-child(4) {
+.nav__desktop ul li:last-child {
   height: 0 !important;
 }
 
@@ -68,13 +73,44 @@ a {
   user-select: none;
 }
 
+/* Navigation Mobile */
+.nav__mobile {
+  background-color: var(--primary-md-contrast);
+  position: fixed;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75vw;
+  padding: 2rem;
+  z-index: 2;
+  line-height: 1;
+  transition: top 400ms ease-in-out;
+  border-radius: 0 0 10px 10px;
+}
+.nav__mobile ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  justify-content: space-around;
+  gap: 2%;
+  z-index: 2;
+}
+.nav__mobile-item {
+  color: var(--text-primary);
+  font-size: 2rem;
+}
 body {
   font-family: sans-serif;
 }
-.active {
+.nav__desktop--active {
   font-weight: bold;
-  /* letter-spacing: 1px; */
+  letter-spacing: 1px;
   font-size: 2rem;
+  color: rgb(106, 238, 220);
+}
+.nav__mobile--active {
+  letter-spacing: 1px;
   color: rgb(106, 238, 220);
 }
 main {
@@ -322,6 +358,9 @@ section[data-title="skills"] {
   }
   .timeline {
     left: -200px;
+  }
+  .nav__mobile {
+    top: 0;
   }
 }
 @media screen and (max-width: 450px) {
