@@ -101,7 +101,12 @@ a {
   color: var(--text-primary);
   font-size: 2rem;
 }
-.nav__item:hover {
+.nav__item > a {
+  transition: 200ms ease-in-out all;
+  display: inline-block;
+}
+.nav__item > a:hover {
+  scale: 1.2;
   color: rgb(106, 238, 220);
 }
 body {
@@ -235,14 +240,7 @@ section[data-title="skills"] {
   grid-template-columns: repeat(auto-fit, minmax(min(70rem, 80%), 1fr));
   gap: 3rem;
 }
-/* Project Cards */
-/* @media screen and (max-width: 800px) {
-  .projects__container {
-    grid-template-columns: 1fr;
-    margin: 0 auto;
-    width: 90%;
-  }
-} */
+
 .projects__item {
   display: flex;
   background-color: var(--primary-md-contrast);
@@ -278,17 +276,17 @@ section[data-title="skills"] {
   justify-content: space-between;
 }
 .projects__content > h2 {
-  margin-bottom: 1rem;
+  margin-bottom: 1.4rem;
 }
 .projects__content > span {
   font-size: 0.8em;
   color: var(--text-secondary);
 }
 .projects__chips {
-  margin-bottom: 1em;
   display: flex;
-  gap: 1rem;
   flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 .projects__content > h3 {
   font-size: 1em;
@@ -297,13 +295,15 @@ section[data-title="skills"] {
   font-size: 0.9em;
   line-height: 1.5;
   overflow-y: scroll;
-  max-height: 15rem;
+  max-height: 25rem;
   color: var(--text-secondary);
+  margin-bottom: 1rem;
+  padding-right: 1rem;
 }
 .projects__content > p::-webkit-scrollbar {
   border-radius: 999px;
   background-color: var(--primary-high-contrast);
-  width: 0.4rem;
+  width: 0.3rem;
 }
 .projects__content > p::-webkit-scrollbar-thumb {
   border-radius: 999px;
