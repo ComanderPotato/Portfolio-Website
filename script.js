@@ -5,6 +5,12 @@ const sectionArr = document.querySelectorAll("section");
 const timelineEl = document.querySelector(".timeline__bar");
 const skillsCards = document.querySelectorAll(".skills__card");
 let delay = getComputedStyle(document.documentElement).getPropertyValue("--delay");
+const paths = document.querySelectorAll(".ass");
+for (let i = 0; i < paths.length; i++) {
+    paths[i].style.strokeDasharray = `${paths[i].getTotalLength()}`;
+    paths[i].style.strokeDashoffset = `${paths[i].getTotalLength()}`;
+}
+paths.forEach((a) => console.log(a.style));
 let delayDefault = 0;
 let transitionDefault = 0;
 skillsCards.forEach((card) => {
