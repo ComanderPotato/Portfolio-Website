@@ -134,8 +134,8 @@ section {
   margin: 0 auto;
   min-height: 100vh;
   display: grid;
-  /* max-width: 160rem; */
-  width: clamp(80%, 80vw, 160rem);
+  max-width: 160rem;
+  /* width: clamp(80%, 80vw, 160rem); */
   place-content: center;
 
   padding-block: 5rem;
@@ -363,13 +363,20 @@ section[data-title="skills"] {
 .projects__links .projects__links-demo:hover svg {
   stroke: var(--primary);
 }
-
-@media screen and (max-width: 2200px) {
+@media screen and (max-width: 3000px) {
   html {
-    font-size: 65%;
+    font-size: 85%;
   }
   section {
-    /* min-width: 180rem; */
+    max-width: 140rem;
+  }
+}
+@media screen and (max-width: 2200px) {
+  html {
+    font-size: 75%;
+  }
+  section {
+    max-width: 150rem;
   }
 }
 @media screen and (max-width: 1950px) {
