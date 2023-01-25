@@ -110,7 +110,7 @@ function activeNav() {
   let current: HTMLElement;
   sectionArr.forEach((section) => {
     const sectionTop = section.offsetTop;
-    if (scrollY >= sectionTop) {
+    if (scrollY >= sectionTop - 200) {
       current = section;
     }
   });
