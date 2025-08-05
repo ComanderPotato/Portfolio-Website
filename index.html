@@ -1,532 +1,88 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/styles.css" />
-    <link rel="stylesheet" href="./styles/components.css" />
-    <meta
-      name="apple-mobile-web-app-status-bar-style"
-      content="rgb(31, 33, 53)"
-    />
-    <script src="script.js" defer></script>
-    <title>Tom Golding</title>
-  </head>
-  <body>
-    <aside class="timeline">
-      <div class="timeline__bar"></div>
-      <nav
-        role="navigation"
-        title="Desktop navigation"
-        class="timeline__headers nav__desktop"
-      ></nav>
-    </aside>
-    <nav class="nav__mobile" role="navigation" title="Mobile navigation"></nav>
-    <main>
-      <section data-title="intro" id="me">
-        <h1 class="intro__title">Tom Golding</h1>
-        <span class="intro__subtitle">
-          <div>
-            <span>Frontend</span>
-            <span>Software</span>
-            <span>Frontend</span>
-          </div>
-          <div>
-            <span>Developer</span>
-            <span>Engineer</span>
-            <span>Developer</span>
-          </div>
-        </span>
-        <div class="intro__links">
-          <a
-            href="https://github.com/ComanderPotato"
-            class="intro__link"
-            target="_blank"
-          >
-            <img src="./assets/svgs/GitHub_logo.svg" alt="" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/tom-golding-98b73a204/"
-            class="intro__link"
-            target="_blank"
-          >
-            <img src="./assets/svgs/Linkedin_logo.svg" alt="" />
-          </a>
-          <a
-            href="./assets/resume/Tom Golding's Resume - 2024.pdf"
-            target="_blank"
-            class="intro__resume"
-            ><span>Resume</span></a
-          >
-        </div>
-        <a class="intro__arrow" href="#skills">
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z"
-              fill="white"
-            />
-          </svg>
-        </a>
-        <!-- <div class="overlay"></div> -->
-      </section>
-      <section data-title="skills" id="skills">
-        <h2 class="section__title">Skills</h2>
-        <div class="row">
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/C++_Logo.svg" alt="C++ Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>C++</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img
-                src="./assets/svgs/Javascript_logo.svg"
-                alt="Javascript Logo"
-              />
-            </div>
-            <div class="skills__card-text">
-              <span>JavaScript</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img
-                src="./assets/svgs/Typescript_logo.svg"
-                alt="Typescript Logo"
-              />
-            </div>
-            <div class="skills__card-text">
-              <span>TypeScript</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/Java_logo.svg" alt="Java Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>Java</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/React_logo.svg" alt="ReactJS Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>ReactJS</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/C_Sharp_logo.svg" alt="C# Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>C#</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/Python_logo.svg" alt="Python Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>Python</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/CSS_logo.svg" alt="CSS Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>CSS</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/HTML_logo.svg" alt="HTML Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>HTML</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/Git_logo.svg" alt="Git Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>Git</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/GitHub_logo.svg" alt="GitHub Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>GitHub</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/npm_logo.svg" alt="npm Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>npm</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/MySQL_logo.svg" alt="MySQL Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>MySQL</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/Figma_logo.svg" alt="Figma Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>Figma</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/Firebase_logo.svg" alt="Firebase Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>Firebase</span>
-            </div>
-          </div>
-          <div class="skills__card">
-            <div class="skills__card-wrapper">
-              <img src="./assets/svgs/NodeJS_logo.svg" alt="NodeJS Logo" />
-            </div>
-            <div class="skills__card-text">
-              <span>NodeJS</span>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section data-title="projects" id="projects">
-        <h2 class="section__title">Projects</h2>
-        <div class="projects__container">
-          <div class="projects__item">
-            <div class="wrapper">
-              <div
-                class="projects__image"
-                data-src="./assets/images/timetable_card_img.png"
-              ></div>
-            </div>
-            <div class="projects__content">
-              <span>Project</span>
-              <h2>Assignment Planner (unfinished)</h2>
-              <div class="projects__chips">
-                <span class="chip chip--react">ReactJS</span>
-                <span class="chip chip--js">JavaScript</span>
-                <span class="chip chip--css">CSS</span>
-                <span class="chip chip--html">HTML</span>
-                <span class="chip chip--figma">Figma</span>
-              </div>
-              <h3>About</h3>
-              <p>
-                An application that allows students to plan out their upcoming
-                semester assignment timetable, in an easy-to-use way. The
-                assignment planner keeps track of assignment due dates,
-                necessary notes related to the specific assignment, their
-                achieved grade for the assignment, and an overall grade for the
-                entire subject. The application aims to help students who tend
-                to fall behind due to a lack of organisation, as well as to
-                reduce stress when it comes to their grades as it is
-                automatically calculated for them, removing the dreaded “Will I
-                pass?” or “How much do I need?” moment. Currently, the
-                application is unfinished and is using local storage to keep
-                information on the users' device. But plans to implement a
-                backend with Firebase to incorporate Google Authentication are
-                in the works, allowing the planner to connect to and update
-                their Google calendar.
-              </p>
-              <div class="projects__links">
-                <a
-                  href="https://github.com/ComanderPotato/Timetable-v2"
-                  target="_blank"
-                  class="projects__links-git"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                  <span>Source Code</span></a
-                >
-                <a
-                  href="https://resilient-genie-8ce154.netlify.app/"
-                  target="_blank"
-                  class="projects__links-demo"
-                >
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                    ></path>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    ></path>
-                  </svg>
-                  <span>Live Demo</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="projects__item">
-            <div class="wrapper">
-              <div
-                class="projects__image"
-                data-src="./assets/images/syntactic_analyser_img.png"
-              ></div>
-            </div>
-            <div class="projects__content">
-              <span>Assignment</span>
-              <h2>Lexical / Syntactic Analyser</h2>
-              <div class="projects__chips">
-                <span class="chip chip--java">Java</span>
-              </div>
-              <h3>About</h3>
-              <p>
-                Both of these were assignments for the subject “Theory of
-                Computer Science”, which delved deep into the theoretical side
-                of CS, most notedly compilers. The first assignment was to
-                implement a deterministic finite automaton, which takes in a
-                string representing an arithmetic statement and produces an
-                output sequence of tokens that represent the numbers and
-                operators. The second assignment was to implement a parser that
-                checks the syntactic correctness of a simplified subset of the
-                Java programming language and builds a parse tree representing
-                the program.
-              </p>
-              <div class="projects__links">
-                <a
-                  href="https://github.com/ComanderPotato?tab=repositories&q=assignment&type=&language=&sort="
-                  target="_blank"
-                  class="projects__links-git"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                  <span>Source Code</span></a
-                >
-              </div>
-            </div>
-          </div>
-
-          <div class="projects__item">
-            <div class="wrapper">
-              <div
-                class="projects__image"
-                data-src="./assets/images/real_time_card_img.png"
-              ></div>
-            </div>
-            <div class="projects__content">
-              <span>Project</span>
-              <h2>Real-time chat app</h2>
-              <div class="projects__chips">
-                <span class="chip chip--react">ReactJS</span>
-                <span class="chip chip--js">JavaScript</span>
-                <span class="chip chip--firebase">Firebase</span>
-                <span class="chip chip--css">CSS</span>
-                <span class="chip chip--html">HTML</span>
-              </div>
-              <h3>About</h3>
-              <p>
-                This was a quick side project that allowed me to start learning
-                the fundamentals of Firebase user authentication and their Cloud
-                firestore database, and further improved my ReactJS knowledge
-                and code efficiency. The application uses Firebases' Google
-                authentication provider to manage different users and their
-                messages through their cloud database.
-              </p>
-              <div class="projects__links">
-                <a
-                  href="https://github.com/ComanderPotato/Realtime-Chat-app"
-                  target="_blank"
-                  class="projects__links-git"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                  <span>Source Code</span></a
-                >
-                <a
-                  href="https://radiant-baklava-e1a257.netlify.app/"
-                  target="_blank"
-                  class="projects__links-demo"
-                >
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                    ></path>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    ></path>
-                  </svg>
-                  <span>Live Demo</span>
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="projects__item">
-            <div class="wrapper">
-              <div
-                class="projects__image"
-                data-src="./assets/images/canal_img.png"
-              ></div>
-            </div>
-            <div class="projects__content">
-              <span>Project</span>
-              <h2>Various Frontend pages</h2>
-              <div class="projects__chips">
-                <span class="chip chip--js">JavaScript</span>
-                <span class="chip chip--ts">TypeScript</span>
-                <span class="chip chip--html">HTML</span>
-                <span class="chip chip--css">CSS</span>
-              </div>
-              <h3>About</h3>
-              <p>
-                These are a list of frontend pages I’ve done to implement a lot
-                of the stuff I’ve learnt, as well as learn a couple of things
-                along the way. The types of visual techniques used from site to
-                site vary, these range from on-load animations, to on-scroll
-                transitions and effects. The source code for the list of sites,
-                and a live demo of my most recent site "Canal Street Market" are
-                below.
-              </p>
-              <div class="projects__links">
-                <a
-                  href="https://github.com/ComanderPotato?tab=repositories&q=website&type=&language=&sort="
-                  target="_blank"
-                  class="projects__links-git"
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-                    />
-                  </svg>
-                  <span>Source Code</span></a
-                >
-                <a
-                  href="https://taupe-kleicha-d94a15.netlify.app/"
-                  target="_blank"
-                  class="projects__links-demo"
-                >
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                    aria-hidden="true"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"
-                    ></path>
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                    ></path>
-                  </svg>
-                  <span>Live Demo</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section data-title="about" id="about">
-        <h2 class="section__title">About Me</h2>
-        <p>
-          Hey there! My name is Tom, and I'm a third year student studying
-          Computer Science at the University of Technology, Sydney. Ever since I
-          was young I've had a strong passion for technology, the idea that
-          anyone can tinker, and create amazing things has been a driving force
-          in my development journey. Opening up my first locally hosted website
-          with the header “Hello World” sparked something inside me that told me
-          that this was my path. Currently I specialise in frontend and software
-          development, and dabble in areas such as design and backend. Feel free
-          to check out my socials and my resume.
-        </p>
-        <div class="link__container">
-          <a
-            href="https://github.com/ComanderPotato"
-            class="intro__link"
-            target="_blank"
-          >
-            <img src="./assets/svgs/GitHub_logo.svg" alt="" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/tom-golding-98b73a204/"
-            class="intro__link"
-            target="_blank"
-          >
-            <img src="./assets/svgs/Linkedin_logo.svg" alt="" />
-          </a>
-          <a
-            href="./assets/resume/Tom Golding's Resume - 2024.pdf"
-            target="_blank"
-            class="intro__resume"
-            ><span>Resume</span></a
-          >
-        </div>
-      </section>
-    </main>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./styles/styles.css" />
+		<link rel="stylesheet" href="./styles/components.css" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="rgb(31, 33, 53)" />
+		<script src="script.js" defer></script>
+		<title>Tom Golding</title>
+	</head>
+	<body>
+		<aside class="timeline">
+			<div class="timeline__bar"></div>
+			<nav role="navigation" title="Desktop navigation" class="timeline__headers nav__desktop"></nav>
+		</aside>
+		<nav class="nav__mobile" role="navigation" title="Mobile navigation"></nav>
+		<main>
+			<section data-title="intro" id="me">
+				<h1 class="intro__title">Tom Golding</h1>
+				<span class="intro__subtitle">
+					<div>
+						<span>Frontend</span>
+						<span>Software</span>
+						<span>Frontend</span>
+					</div>
+					<div>
+						<span>Developer</span>
+						<span>Engineer</span>
+						<span>Developer</span>
+					</div>
+				</span>
+				<div class="intro__links">
+					<a href="https://github.com/ComanderPotato" class="intro__link" target="_blank">
+						<img src="./assets/svgs/GitHub_logo.svg" alt="" />
+					</a>
+					<a href="https://www.linkedin.com/in/tom-golding-98b73a204/" class="intro__link" target="_blank">
+						<img src="./assets/svgs/Linkedin_logo.svg" alt="" />
+					</a>
+					<a href="./assets/resume/Tom Golding's Resume - 2024.pdf" target="_blank" class="intro__resume"
+						><span>Resume</span></a
+					>
+				</div>
+				<a class="intro__arrow" href="#skills">
+					<svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M7.41 8.57812L12 13.1681L16.59 8.57812L18 9.99813L12 15.9981L6 9.99813L7.41 8.57812Z"
+							fill="white"
+						/>
+					</svg>
+				</a>
+				<!-- <div class="overlay"></div> -->
+			</section>
+			<section data-title="skills" id="skills">
+				<h2 class="section__title">Skills</h2>
+				<div class="row"></div>
+			</section>
+			<section data-title="projects" id="projects">
+				<h2 class="section__title">Projects</h2>
+				<div class="projects__container"></div>
+			</section>
+			<section data-title="about" id="about">
+				<h2 class="section__title">About Me</h2>
+				<p>
+					Hi, I’m Tom — a Computer Science graduate with First Class Honours from the University of Technology
+					Sydney. I’ve always been passionate about technology and the idea that anyone can build something
+					from scratch with just curiosity and code. That moment I saw my first “Hello World” on a locally
+					hosted website sealed the deal — I knew this was my path. I currently specialise in frontend and
+					software development, with growing experience in design, backend systems, and cross-platform
+					applications using tools like Flask, FastAPI, Unity, and Tkinter. Feel free to explore my projects,
+					check out my resume, or connect with me on socials!
+				</p>
+				<div class="link__container">
+					<a href="https://github.com/ComanderPotato" class="intro__link" target="_blank">
+						<img src="./assets/svgs/GitHub_logo.svg" alt="" />
+					</a>
+					<a href="https://www.linkedin.com/in/tom-golding-98b73a204/" class="intro__link" target="_blank">
+						<img src="./assets/svgs/Linkedin_logo.svg" alt="" />
+					</a>
+					<a href="./assets/resume/Tom Golding's Resume - 2025.pdf" target="_blank" class="intro__resume"
+						><span>Resume</span></a
+					>
+				</div>
+			</section>
+		</main>
+	</body>
 </html>

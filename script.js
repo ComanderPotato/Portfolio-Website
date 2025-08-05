@@ -1,16 +1,73 @@
 "use strict";
+const skills = [
+    ["JavaScript", "javascript_logo.svg"],
+    ["TypeScript", "typescript_logo.svg"],
+    ["Python", "python_logo.svg"],
+    ["Java", "java_logo.svg"],
+    ["C++", "cpp_logo.svg"],
+    ["C#", "csharp_logo.svg"],
+    ["Swift", "swift_logo.svg"],
+    ["SwiftUI", "swiftui_logo.svg"],
+    ["React", "react_logo.svg"],
+    [".NET", "dotnet_logo.svg"],
+    ["Node.js", "nodejs_logo.svg"],
+    ["Flask", "flask_logo.svg"],
+    ["FastAPI", "fastapi_logo.svg"],
+    // ["TensorFlow", "tensorflow_logo.svg"],
+    ["PyTorch", "pytorch_logo.svg"],
+    // ["Firebase", "firebase_logo.svg"],
+    ["MySQL", "mysql_logo.svg"],
+    // ["MongoDB", "mongodb_logo.svg"],
+    ["Three.js", "threejs_logo.svg"],
+    ["Git", "git_logo.svg"],
+    // ["npm", "npm_logo.svg"],
+    ["HTML", "html_logo.svg"],
+    ["CSS", "css_logo.svg"],
+    // ["Figma", "figma_logo.svg"],
+    // ["GitHub", "github_logo.svg"],
+];
+const projects = [
+    {
+        type: "Project",
+        image: "./assets/images/solar_system_card_image.png",
+        title: "Solar System Simulation (In-Progress)",
+        skills: ["Typescript", "ThreeJS", "Python", "Flask"],
+        about: "A 3D interactive simulation of our solar system, designed to help users visualise planetary motion, orbits, and celestial dynamics in an engaging, educational way. The simulation pulls real astronomical data from the Solar System OpenData API to accurately model planetary and lunar orbits, axial tilt, and distances. A Python backend was developed to fetch, cache, and serve this data, while performance optimisations like caching and asset bundling ensure smooth web delivery. Currently undergoing a full refactor, with plans to migrate the backend to FastAPI and expand the simulation with UI panels, clickable objects, and deep-linking capabilities for specific planets.",
+        sourceCode: "https://github.com/ComanderPotato/solar-system",
+    },
+    {
+        type: "Assignment",
+        image: "./assets/images/trash_drone_detection_application_card.jfif",
+        title: "Drone Trash Detection Application",
+        skills: ["Python", "PyTorch", "TKinter"],
+        about: "A desktop application that uses deep learning to identify and highlight trash in drone footage, aimed at improving environmental monitoring efficiency. Developed in a team of two, with a focus on model training and backend functionality. The YOLOv8 model was trained on custom datasets, and integrated with OpenCV for live object detection. A Tkinter-based GUI allows users to analyse both real-time webcam feeds and pre-recorded MP4 videos in an intuitive interface. The project explored the practical application of computer vision in sustainability-focused use cases.",
+        sourceCode: "https://github.com/ComanderPotato/Drone-detection-application",
+    },
+    {
+        type: "Assignment",
+        image: "./assets/images/assignment_planner_card_image.png",
+        title: "Assignment Planner",
+        skills: ["C#", ".NET", "MySQL"],
+        about: "An application that allows students to plan out their upcoming semester assignment timetable in a clean, easy-to-use way. The planner tracks assignment due dates, notes, grades for individual tasks, and calculates overall subject grades automatically. It was designed to assist students with time management and academic progress tracking, reducing stress and uncertainty around assessment outcomes. Built with a strong focus on usability and future extensibility, the application currently stores data locally, with plans to implement cloud sync and user authentication via Firebase.",
+        sourceCode: "https://github.com/ComanderPotato/Assignment-Planner",
+    },
+    {
+        type: "Project",
+        image: "./assets/images/weather_app_card_image.png",
+        title: "Weather Application",
+        skills: ["Swift", "SwiftUI"],
+        about: "A sleek and responsive weather application that provides real-time weather updates and location-based forecasts. Developed in collaboration with a small team, with a personal focus on the underlying logic and data handling. The app uses the WeatherAPI to fetch current and forecasted weather data, which is presented using modern SwiftUI components. Glassmorphism-inspired UI elements were implemented to enhance user experience with a polished, modern aesthetic. The project was designed for iOS devices and emphasised clarity, simplicity, and accessibility.",
+        sourceCode: "https://github.com/ComanderPotato/WeatherAppV2",
+    },
+];
 const navDesktop = document.querySelector(".nav__desktop");
 const navMobile = document.querySelector(".nav__mobile");
 const sectionArr = document.querySelectorAll("section");
 const timelineEl = document.querySelector(".timeline__bar");
-const skillsCards = document.querySelectorAll(".skills__card");
+// const skillsCards = document.querySelectorAll(".skills__card") as NodeListOf<HTMLDivElement>;
+const skillsCards = initialiseSkills();
+initialiseProjects();
 let delay = getComputedStyle(document.documentElement).getPropertyValue("--delay");
-const paths = document.querySelectorAll(".ass");
-for (let i = 0; i < paths.length; i++) {
-    paths[i].style.strokeDasharray = `${paths[i].getTotalLength()}`;
-    paths[i].style.strokeDashoffset = `${paths[i].getTotalLength()}`;
-}
-paths.forEach((a) => console.log(a.style));
 let delayDefault = 0;
 let transitionDefault = 0;
 skillsCards.forEach((card) => {
@@ -23,7 +80,6 @@ const sectionObserver = new IntersectionObserver((entries) => {
         if (entryTarget.dataset.title === "skills" && entry.isIntersecting) {
             skillsCards.forEach((card) => {
                 card.classList.add("skills__card--active");
-                // console.log(card.children[0].firstElementChild);
             });
         }
     });
@@ -44,16 +100,13 @@ const lazyLoader = new IntersectionObserver((entries) => {
 document.querySelectorAll(".projects__image").forEach((image) => lazyLoader.observe(image));
 function getElementRatio(element) {
     return (element.getBoundingClientRect().height /
-        (document.documentElement.scrollHeight -
-            document.documentElement.clientHeight));
+        (document.documentElement.scrollHeight - document.documentElement.clientHeight));
 }
 sectionArr.forEach((el) => {
     sectionObserver.observe(el);
 });
 function getHeightPercentage(section) {
-    return ((section.getBoundingClientRect().height /
-        document.documentElement.scrollHeight) *
-        100);
+    return (section.getBoundingClientRect().height / document.documentElement.scrollHeight) * 100;
 }
 // Nav builder desktop / mobile
 (function () {
@@ -116,9 +169,66 @@ window.addEventListener("resize", () => {
 });
 function fillTimeLine() {
     let scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) /
-        (document.documentElement.scrollHeight -
-            document.documentElement.clientHeight);
+        (document.documentElement.scrollHeight - document.documentElement.clientHeight);
     timelineEl.style.height = `${100 * scrollPercentage}%`;
+}
+(function () { })();
+function initialiseSkills() {
+    const skillsRow = document.querySelector(".row");
+    for (const skill of skills) {
+        console.log(skill);
+        skillsRow.innerHTML += skillsTemplate(skill);
+    }
+    return document.querySelectorAll(".skills__card");
+}
+function initialiseProjects() {
+    const projectsContainer = document.querySelector(".projects__container");
+    for (const project of projects) {
+        projectsContainer.innerHTML += projectTemplate(project);
+    }
+}
+function skillsTemplate(skill) {
+    return `
+          <div class="skills__card">
+            <div class="skills__card-wrapper">
+              <img src="./assets/svgs/${skill[1]}" alt="${skill[0]} Logo" />
+            </div>
+            <div class="skills__card-text">
+              <span>${skill[0]}</span>
+            </div>
+          </div>
+
+`;
+}
+function projectTemplate(project) {
+    const skills = project.skills.map((skill) => `<span class="chip chip--${skill.toLowerCase()}">${skill}</span>`);
+    return `
+            <div class="projects__item">
+                <div class="wrapper">
+                    <div class="projects__image" data-src="${project.image}"></div>
+                </div>
+                <div class="projects__content">
+                    <span>${project.type}</span>
+                    <h2>${project.title}</h2>
+                    <div class="projects__chips">
+                        ${skills.join("")}
+                    </div>
+                    <h3>About</h3>
+                    <p>
+                        ${project.about}
+                    </p>
+                    <div class="projects__links">
+                        <a
+                            href="${project.sourceCode}"
+                            target="_blank"
+                            class="projects__links-git"
+                        >
+                            <img src="assets/svgs/github_logo.svg" class="project__svg" alt="" />
+                            <span>Source Code</span></a
+                        >
+                    </div>
+                </div>
+            </div>`;
 }
 function init() {
     activeNav();

@@ -1,44 +1,167 @@
 /* Project Chips */
 .chip {
-  display: inline-block;
-  padding: 0.2rem 0.8rem;
-  border-radius: 999px;
-  /* font-weight: bold; */
-  font-size: 1.5rem;
-  transition: scale 200ms ease-in-out;
-  cursor: pointer;
-  color: #323330;
-  color: #1e1e1e;
-  font-weight: bold;
+	display: inline-block;
+	padding: 0.2rem 0.8rem;
+	border-radius: 999px;
+	/* font-weight: bold; */
+	font-size: 1.5rem;
+	transition: scale 200ms ease-in-out;
+	cursor: pointer;
+	color: #323330;
+	color: #1e1e1e;
+	font-weight: bold;
 }
 .chip:hover {
-  scale: 1.05;
+	scale: 1.05;
 }
-.chip--js {
-  background-color: #f0db4f;
+/* .chip--js { */
+/* 	background-color: #f0db4f; */
+/* } */
+/* .chip--html { */
+/* 	background-color: #f06529; */
+/* } */
+/* .chip--css { */
+/* 	background-color: #264de4; */
+/* 	color: rgb(245, 219, 219); */
+/* } */
+/* .chip--react { */
+/* 	background-color: #61dbfb; */
+/* } */
+/* .chip--ts { */
+/* 	background-color: #007acc; */
+/* } */
+/* .chip--firebase { */
+/* 	background-color: #f5820d; */
+/* } */
+/* .chip--java { */
+/* 	background-color: #f89820; */
+/* } */
+/**/
+/* .chip--figma { */
+/* 	background-color: #ae4dff; */
+/* 	color: rgb(245, 219, 219); */
+/* } */
+.chip--javascript {
+	background-color: #f0db4f;
+	color: #000;
 }
-.chip--html {
-  background-color: #f06529;
+.chip--typescript {
+	background-color: #007acc;
+	color: #fff;
 }
-.chip--css {
-  background-color: #264de4;
-  color: rgb(245, 219, 219);
-}
-
-.chip--react {
-  background-color: #61dbfb;
-}
-.chip--ts {
-  background-color: #007acc;
-}
-.chip--firebase {
-  background-color: #f5820d;
+.chip--python {
+	background-color: #3776ab;
+	color: #fff;
 }
 .chip--java {
-  background-color: #f89820;
+	background-color: #f89820;
+	color: #000;
 }
-
+.chip--c\+\+ {
+	background-color: #00599c;
+	color: #fff;
+}
+.chip--c\# {
+	background-color: #9b4f96;
+	color: #fff;
+}
+.chip--swift {
+	background-color: #f05138;
+	color: #fff;
+}
+.chip--swiftui {
+	background-color: #1d9bf0;
+	color: #fff;
+}
+.chip--react {
+	background-color: #61dbfb;
+	color: #000;
+}
+.chip--\.net {
+	background-color: #512bd4;
+	color: #fff;
+}
+.chip--node\\.js {
+	background-color: #539e43;
+	color: #fff;
+}
+.chip--flask {
+	background-color: #000000;
+	color: #fff;
+}
+.chip--fastapi {
+	background-color: #05998b;
+	color: #fff;
+}
+.chip--tensorflow {
+	background-color: #ff6f00;
+	color: #000;
+}
+.chip--pytorch {
+	background-color: #ee4c2c;
+	color: #fff;
+}
+.chip--firebase {
+	background-color: #f5820d;
+	color: #000;
+}
+.chip--mysql {
+	background-color: #00758f;
+	color: #fff;
+}
+.chip--mongodb {
+	background-color: #47a248;
+	color: #fff;
+}
+.chip--threejs {
+	background-color: #000000;
+	color: #fff;
+}
+/* .chip--material ui {
+	background-color: #0081cb;
+	color: #fff;
+} */
+.chip--tkinter {
+	background-color: #96b4d4;
+	color: #fff;
+}
+.chip--git {
+	background-color: #f1502f;
+	color: #fff;
+}
+.chip--npm {
+	background-color: #cb3837;
+	color: #fff;
+}
+.chip--css {
+	background-color: #264de4;
+	color: rgb(245, 219, 219);
+}
+.chip--html {
+	background-color: #f06529;
+	color: #fff;
+}
 .chip--figma {
-  background-color: #ae4dff;
-  color: rgb(245, 219, 219);
+	background-color: #ae4dff;
+	color: rgb(245, 219, 219);
 }
+.chip--github {
+	background-color: #24292e;
+	color: #fff;
+}
+/* .chip--ci/cd {
+	background-color: #0078d7;
+	color: #fff;
+}
+.chip--oop {
+	background-color: #3e3e3e;
+	color: #fff;
+}
+.chip--design patterns {
+	background-color: #6c757d;
+	color: #fff;
+}
+.chip--software architecture {
+	background-color: #444;
+	color: #fff;
+} */
