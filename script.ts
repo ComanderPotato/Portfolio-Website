@@ -209,8 +209,6 @@ function fillTimeLine(): void {
 function initialiseSkills(): NodeListOf<HTMLDivElement> {
 	const skillsRow = document.querySelector(".row") as HTMLDivElement;
 	for (const skill of skills) {
-		console.log(skill);
-
 		skillsRow.innerHTML += skillsTemplate(skill);
 	}
 
