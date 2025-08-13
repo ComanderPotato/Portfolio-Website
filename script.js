@@ -176,7 +176,6 @@ function fillTimeLine() {
 function initialiseSkills() {
     const skillsRow = document.querySelector(".row");
     for (const skill of skills) {
-        console.log(skill);
         skillsRow.innerHTML += skillsTemplate(skill);
     }
     return document.querySelectorAll(".skills__card");
